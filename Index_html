@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokito Teachers — Become the Teacher Every School Wants to Hire</title>
+    <meta name="description" content="Master modern teaching skills, gain subject expertise for Edexcel & Cambridge curricula, complete shadow teaching at partner schools, and earn your Diploma in Professional Teaching Practice with Alokito Teachers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4E2737',
+                        'primary-light': '#6B3A4D',
+                        'primary-dark': '#3A1C2A',
+                        'primary-50': '#FAF6F8',
+                        'primary-100': '#F0E4E8',
+                        'accent-orange': '#E2804B',
+                        'accent-gold': '#ECBB4E',
+                        'accent-red': '#E45D5D',
+                        'warm': '#F9F7F5',
+                        'warm-border': '#E8E0E4',
+                        'text-secondary': '#6B5B6E',
+                        'text-muted': '#9B8A9E',
+                    },
+                    fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+                    borderRadius: { '4xl': '2rem' }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{font-family:'Montserrat',sans-serif}
+        ::selection{background:rgba(226,128,75,.2);color:#4E2737}
+        .fade-up{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+        .fade-up.visible{opacity:1;transform:translateY(0)}
+        .fade-up.delay-1{transition-delay:.1s}.fade-up.delay-2{transition-delay:.2s}.fade-up.delay-3{transition-delay:.3s}.fade-up.delay-4{transition-delay:.4s}.fade-up.delay-5{transition-delay:.5s}
+        .timeline-line{height:0;transition:height 1.5s cubic-bezier(.16,1,.3,1)}
+        .timeline-line.visible{height:100%}
+        .card-hover{transition:all .4s cubic-bezier(.16,1,.3,1)}
+        .card-hover:hover{transform:translateY(-6px);box-shadow:0 20px 60px -15px rgba(78,39,55,.15)}
+        .diploma-glow{box-shadow:0 0 0 1px rgba(226,128,75,.3),0 20px 60px -10px rgba(226,128,75,.2)}
+        .diploma-glow:hover{box-shadow:0 0 0 1px rgba(226,128,75,.5),0 25px 70px -10px rgba(226,128,75,.3)}
+        .badge-pop{animation:badgePop .6s cubic-bezier(.16,1,.3,1)}
+        @keyframes badgePop{0%{transform:scale(0)}100%{transform:scale(1)}}
+        .celebration{animation:celebrate .8s cubic-bezier(.16,1,.3,1)}
+        @keyframes celebrate{0%{opacity:0;transform:scale(.8) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+        .float-btn{transform:translateY(100px);opacity:0;transition:all .5s cubic-bezier(.16,1,.3,1)}
+        .float-btn.visible{transform:translateY(0);opacity:1}
+        .nav-blur{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+        .gradient-text{background:linear-gradient(135deg,#4E2737 0%,#E2804B 50%,#ECBB4E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .pulse-dot{animation:pulseDot 2s ease-in-out infinite}
+        @keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(226,128,75,.4)}50%{box-shadow:0 0 0 12px rgba(226,128,75,0)}}
+        .carousel-track{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+        .check-custom{appearance:none;-webkit-appearance:none;width:22px;height:22px;border:2px solid #E8E0E4;border-radius:6px;cursor:pointer;transition:all .2s;flex-shrink:0;position:relative}
+        .check-custom:checked{background:#E2804B;border-color:#E2804B}
+        .check-custom:checked::after{content:'✓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:14px;font-weight:700}
+        .check-custom:hover{border-color:#E2804B}
+        .toast{transform:translateY(20px);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1)}
+        .toast.show{transform:translateY(0);opacity:1}
+        @keyframes confetti{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(-100px) rotate(720deg);opacity:0}}
+        .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confetti 1.5s ease-out forwards}
+        .accordion-content{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+        .accordion-content.open{max-height:300px}
+        .accordion-icon{transition:transform .3s ease}
+        .accordion-icon.open{transform:rotate(180deg)}
+        .mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+        .mobile-menu.open{transform:translateX(0)}
+        .hero-gradient{background:radial-gradient(ellipse at 50% 0%,rgba(226,128,75,.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(236,187,78,.06) 0%,transparent 50%),radial-gradient(ellipse at 20% 80%,rgba(228,93,93,.05) 0%,transparent 50%)}
+        .section-divider{height:1px;background:linear-gradient(to right,transparent,#E8E0E4,transparent)}
+        .credit-fill{transition:width .6s cubic-bezier(.16,1,.3,1)}
+        .subject-card{transition:all .3s cubic-bezier(.16,1,.3,1)}
+        .subject-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px -10px rgba(78,39,55,.12)}
+        .module-card{transition:all .3s cubic-bezier(.16,1,.3,1)}
+        .module-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px -8px rgba(78,39,55,.1)}
+        .config-group-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 0 2px}
+        .demo-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#E2804B;background:rgba(226,128,75,.08);border:1px solid rgba(226,128,75,.15);padding:2px 8px;border-radius:6px}
+    </style>
+</head>
+<body class="bg-white text-primary antialiased">
+
+    <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] bg-primary text-white px-6 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-medium">
+        <i data-lucide="check-circle" class="w-5 h-5 text-accent-gold"></i>
+        <span id="toast-msg">Action completed</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i></div>
+                <span class="font-bold text-lg tracking-tight text-primary">Alokito</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#journey" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Journey</a>
+                <a href="#programs" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Programs</a>
+                <a href="#customize" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Customize</a>
+                <a href="#pricing" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">Pricing</a>
+                <a href="#faq" class="text-sm font-medium text-text-secondary hover:text-primary transition-colors">FAQ</a>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="showToast('Our advisor will contact you shortly!')" class="text-sm font-semibold text-primary hover:text-primary-light transition-colors px-4 py-2">Talk to Advisor</button>
+                <button onclick="openModal()" class="text-sm font-semibold text-white bg-primary hover:bg-primary-light transition-all px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md">Apply Now</button>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-primary-50 transition-colors"><i data-lucide="menu" class="w-5 h-5"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60] bg-white">
+        <div class="px-6 h-16 flex items-center justify-between border-b border-warm-border">
+            <a href="#" class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i></div><span class="font-bold text-lg tracking-tight">Alokito</span></a>
+            <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-primary-50"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div class="px-6 py-8 flex flex-col gap-1">
+            <a href="#journey" onclick="toggleMobileMenu()" class="text-lg font-medium py-3 text-text-secondary hover:text-primary transition-colors">Learning Journey</a>
+            <a href="#programs" onclick="toggleMobileMenu()" class="text-lg font-medium py-3 text-text-secondary hover:text-primary transition-colors">Programs</a>
+            <a href="#customize" onclick="toggleMobileMenu()" class="text-lg font-medium py-3 text-text-secondary hover:text-primary transition-colors">Customize</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="text-lg font-medium py-3 text-text-secondary hover:text-primary transition-colors">Pricing</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="text-lg font-medium py-3 text-text-secondary hover:text-primary transition-colors">FAQ</a>
+            <div class="mt-6 flex flex-col gap-3">
+                <button onclick="showToast('Our advisor will contact you shortly!');toggleMobileMenu()" class="w-full text-center text-sm font-semibold text-primary border-2 border-primary px-5 py-3 rounded-xl hover:bg-primary-50 transition-colors">Talk to Advisor</button>
+                <button onclick="openModal();toggleMobileMenu()" class="w-full text-center text-sm font-semibold text-white bg-primary px-5 py-3 rounded-xl">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Apply Modal -->
+    <div id="apply-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4" style="background:rgba(78,39,55,.4);backdrop-filter:blur(8px)">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-50 transition-colors"><i data-lucide="x" class="w-5 h-5 text-text-muted"></i></button>
+            <div class="w-14 h-14 rounded-2xl bg-accent-orange/10 flex items-center justify-center mb-5"><i data-lucide="send" class="w-7 h-7 text-accent-orange"></i></div>
+            <h3 class="text-2xl font-bold tracking-tight mb-2">Apply Now</h3>
+            <p class="text-text-secondary text-sm mb-6">Fill in your details and our team will get back to you within 24 hours.</p>
+            <form onsubmit="event.preventDefault();closeModal();showToast('Application submitted successfully!')" class="flex flex-col gap-4">
+                <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 rounded-xl border border-warm-border text-sm focus:outline-none focus:border-accent-orange focus:ring-2 focus:ring-accent-orange/20 transition-all">
+                <input type="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl border border-warm-border text-sm focus:outline-none focus:border-accent-orange focus:ring-2 focus:ring-accent-orange/20 transition-all">
+                <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 rounded-xl border border-warm-border text-sm focus:outline-none focus:border-accent-orange focus:ring-2 focus:ring-accent-orange/20 transition-all">
+                <select required class="w-full px-4 py-3 rounded-xl border border-warm-border text-sm text-text-muted focus:outline-none focus:border-accent-orange focus:ring-2 focus:ring-accent-orange/20 transition-all">
+                    <option value="" disabled selected>Select Program</option>
+                    <option>Professional Diploma Package</option>
+                    <option>Alokito Future Teachers</option>
+                    <option>Subject Expert Training</option>
+                    <option>Teachers Plan Modules</option>
+                </select>
+                <button type="submit" class="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3.5 rounded-xl transition-all mt-1">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-gradient relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-32">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="fade-up inline-flex items-center gap-2 bg-primary-50 border border-primary-100 rounded-full px-4 py-1.5 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-accent-orange pulse-dot"></span>
+                    <span class="text-xs font-semibold text-primary tracking-wide uppercase">Applications Open for 2025</span>
+                </div>
+                <h1 class="fade-up delay-1 text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">Become the Teacher Every School Wants to <span class="gradient-text">Hire</span></h1>
+                <p class="fade-up delay-2 text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto mb-10">Master modern teaching skills, gain subject expertise for Edexcel & Cambridge curricula, complete demo classes & shadow teaching, and earn your <strong class="text-primary">Diploma in Professional Teaching Practice</strong>.</p>
+                <div class="fade-up delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                    <button onclick="openModal()" class="w-full sm:w-auto bg-primary hover:bg-primary-light text-white font-semibold px-8 py-4 rounded-2xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 flex items-center justify-center gap-2 text-base">Apply Now <i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                    <button onclick="showToast('Curriculum PDF will be sent to your email!')" class="w-full sm:w-auto border-2 border-warm-border hover:border-primary text-primary font-semibold px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-2 text-base hover:bg-primary-50"><i data-lucide="download" class="w-5 h-5"></i> Download Curriculum</button>
+                </div>
+                <div class="fade-up delay-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
+                    <span class="inline-flex items-center gap-1.5 text-sm text-text-secondary"><i data-lucide="check" class="w-4 h-4 text-accent-orange"></i>Online & Hybrid</span>
+                    <span class="inline-flex items-center gap-1.5 text-sm text-text-secondary"><i data-lucide="check" class="w-4 h-4 text-accent-orange"></i>Demo Classes</span>
+                    <span class="inline-flex items-center gap-1.5 text-sm text-text-secondary"><i data-lucide="check" class="w-4 h-4 text-accent-orange"></i>Shadow Teaching</span>
+                    <span class="inline-flex items-center gap-1.5 text-sm text-text-secondary"><i data-lucide="check" class="w-4 h-4 text-accent-orange"></i>Job Placement</span>
+                    <span class="inline-flex items-center gap-1.5 text-sm text-text-secondary"><i data-lucide="check" class="w-4 h-4 text-accent-orange"></i>Diploma Certification</span>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+    </section>
+
+    <!-- Learning Journey -->
+    <section id="journey" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Your Path to 70 Credits</p>
+                <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">The Learning Journey</h2>
+                <p class="fade-up delay-2 text-text-secondary text-lg max-w-2xl mx-auto">A structured credit-based path from foundational skills to diploma certification and career placement.</p>
+            </div>
+            <!-- Credit Bar -->
+            <div class="fade-up max-w-2xl mx-auto mb-16">
+                <div class="bg-warm rounded-2xl p-6 border border-warm-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-semibold">Credits Required for Diploma</span>
+                        <span class="text-sm font-bold text-accent-orange">70 Credits</span>
+                    </div>
+                    <div class="w-full h-3 bg-white rounded-full overflow-hidden flex">
+                        <div class="h-full bg-accent-orange rounded-l-full" style="width:22.9%" title="Future Teachers: 16.5"></div>
+                        <div class="h-full bg-accent-gold" style="width:19.4%" title="Subject Expert: 14"></div>
+                        <div class="h-full bg-accent-red" style="width:36.4%" title="Teachers Plan: 5.25×5=26.25"></div>
+                        <div class="h-full bg-primary-light" style="width:21.4%" title="Shadow Teaching: 15"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-2 mt-4">
+                        <span class="inline-flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-2.5 h-2.5 rounded-sm bg-accent-orange"></span>Future Teachers — 16.5</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-2.5 h-2.5 rounded-sm bg-accent-gold"></span>Subject Expert — 14 each</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-2.5 h-2.5 rounded-sm bg-accent-red"></span>Teachers Plan — 5.25 each</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-2.5 h-2.5 rounded-sm bg-primary-light"></span>Shadow Teaching — 15</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline -->
+            <div class="max-w-2xl mx-auto relative">
+                <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-warm-border">
+                    <div id="timeline-fill" class="timeline-line w-full bg-gradient-to-b from-accent-orange via-accent-gold to-accent-red rounded-full"></div>
+                </div>
+                <div class="space-y-12">
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-accent-orange/10 border-2 border-accent-orange flex items-center justify-center flex-shrink-0"><i data-lucide="layers" class="w-6 h-6 text-accent-orange"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap"><h3 class="text-xl font-bold">Foundational Training</h3><span class="text-xs font-bold text-accent-orange bg-accent-orange/10 px-2.5 py-0.5 rounded-full">16.5 Credits</span></div>
+                            <p class="text-accent-orange/80 text-sm font-medium mb-1">Alokito Future Teachers</p>
+                            <p class="text-text-secondary text-sm leading-relaxed mb-2">Build core teaching competencies — pedagogy, child psychology, lesson planning, assessment, communication, and classroom management.</p>
+                            <div class="flex flex-wrap gap-2"><span class="demo-badge"><i data-lucide="video" class="w-3 h-3"></i>Demo Class</span><span class="demo-badge"><i data-lucide="file-bar-chart" class="w-3 h-3"></i>Performance Report</span><span class="demo-badge"><i data-lucide="briefcase" class="w-3 h-3"></i>Placement Support</span></div>
+                        </div>
+                    </div>
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-accent-gold/10 border-2 border-accent-gold flex items-center justify-center flex-shrink-0"><i data-lucide="book-open" class="w-6 h-6 text-accent-gold"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap"><h3 class="text-xl font-bold">Subject Expert Training</h3><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2.5 py-0.5 rounded-full">14 Credits each</span></div>
+                            <p class="text-accent-gold/80 text-sm font-medium mb-1">English · Science · Inclusive Education · Mathematics</p>
+                            <p class="text-text-secondary text-sm leading-relaxed mb-2">Each subject is a complete 14-credit program aligned with <strong>Edexcel</strong> & <strong>Cambridge</strong> curricula. Master content knowledge with subject-specific teaching strategies. Credits are counted per subject.</p>
+                            <div class="flex flex-wrap gap-2"><span class="demo-badge"><i data-lucide="video" class="w-3 h-3"></i>Demo Class</span><span class="demo-badge"><i data-lucide="file-bar-chart" class="w-3 h-3"></i>Performance Report</span><span class="demo-badge"><i data-lucide="briefcase" class="w-3 h-3"></i>Placement Support</span></div>
+                        </div>
+                    </div>
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-accent-red/10 border-2 border-accent-red flex items-center justify-center flex-shrink-0"><i data-lucide="zap" class="w-6 h-6 text-accent-red"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap"><h3 class="text-xl font-bold">Professional Training</h3><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2.5 py-0.5 rounded-full">5.25 Credits each</span></div>
+                            <p class="text-accent-red/80 text-sm font-medium mb-1">Teachers Plan — Modular Courses</p>
+                            <p class="text-text-secondary text-sm leading-relaxed">Each module is a separate counted unit: Leadership, AI in Education, ADHD & Special Needs, Digital Teaching Tools, and Professional Communication. Every module earns 5.25 credits independently.</p>
+                        </div>
+                    </div>
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-primary-50 border-2 border-primary-light flex items-center justify-center flex-shrink-0"><i data-lucide="school" class="w-6 h-6 text-primary-light"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap"><h3 class="text-xl font-bold">Internship / Shadow Teaching</h3><span class="text-xs font-bold text-primary-light bg-primary-50 px-2.5 py-0.5 rounded-full">15 Credits</span></div>
+                            <p class="text-text-secondary text-sm font-medium mb-1">1 Month at Partner Schools</p>
+                            <p class="text-text-secondary text-sm leading-relaxed">Real classroom experience through shadow teaching and internship at our partner school network. Build your teaching portfolio under mentorship.</p>
+                        </div>
+                    </div>
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-gradient-to-br from-accent-orange to-accent-gold flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent-orange/20"><i data-lucide="award" class="w-6 h-6 text-white"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap"><h3 class="text-xl font-bold">Diploma</h3><span class="text-xs font-bold text-white bg-gradient-to-r from-accent-orange to-accent-gold px-2.5 py-0.5 rounded-full">Assessment & Portfolio</span></div>
+                            <p class="text-text-secondary text-sm leading-relaxed">Complete your diploma assessment, submit your professional teaching portfolio, and earn the <strong class="text-primary">Diploma in Professional Teaching Practice</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="fade-up flex gap-6 md:gap-8 items-start">
+                        <div class="relative z-10 w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-accent-gold/10 border-2 border-accent-gold flex items-center justify-center flex-shrink-0"><i data-lucide="briefcase" class="w-6 h-6 text-accent-gold"></i></div>
+                        <div class="pt-2 md:pt-3 flex-1">
+                            <h3 class="text-xl font-bold mb-1">Job Placement</h3>
+                            <p class="text-text-secondary text-sm leading-relaxed">CV Review · LinkedIn Profile Building · Interview Preparation · Direct Placement Network — we connect you with schools that are actively hiring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Interactive Choice -->
+    <section id="choose" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Choose Your Path</p>
+                <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">How Would You Like to Learn?</h2>
+                <p class="fade-up delay-2 text-text-secondary text-lg max-w-xl mx-auto">Select the option that best fits your goals and timeline.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
+                <!-- Individual -->
+                <div class="fade-up delay-1 card-hover bg-white border border-warm-border rounded-3xl p-8 lg:p-10 flex flex-col">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-50 flex items-center justify-center mb-5"><i data-lucide="book-marked" class="w-6 h-6 text-primary"></i></div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-2">Individual Programs</h3>
+                        <p class="text-text-secondary text-sm">For teachers who want to learn specific skills at their own pace.</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Flexible learning schedule</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Choose any course or module independently</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Pay individually per program</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Earn credits toward diploma</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Demo classes with performance report</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check" class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"></i><span>Certificate for each program</span></li>
+                        <li class="flex items-start gap-3 text-sm text-text-muted"><i data-lucide="x" class="w-5 h-5 text-text-muted/50 mt-0.5 flex-shrink-0"></i><span>No shadow teaching included</span></li>
+                        <li class="flex items-start gap-3 text-sm text-text-muted"><i data-lucide="x" class="w-5 h-5 text-text-muted/50 mt-0.5 flex-shrink-0"></i><span>No diploma certification</span></li>
+                    </ul>
+                    <div class="border-t border-warm-border pt-6">
+                        <p class="text-text-muted text-sm mb-4">Starting from <span class="text-primary font-bold text-xl">৳5,000</span></p>
+                        <a href="#programs" class="block text-center w-full border-2 border-primary text-primary font-semibold py-3.5 rounded-2xl hover:bg-primary-50 transition-all">Explore Programs</a>
+                    </div>
+                </div>
+                <!-- Diploma -->
+                <div class="fade-up delay-2 card-hover diploma-glow bg-white border-2 border-accent-orange/30 rounded-3xl p-8 lg:p-10 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0"><div class="bg-gradient-to-l from-accent-orange to-accent-gold text-white text-xs font-bold tracking-wider uppercase px-5 py-2 rounded-bl-2xl badge-pop">Most Popular</div></div>
+                    <div class="mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-orange/10 flex items-center justify-center mb-5"><i data-lucide="trophy" class="w-6 h-6 text-accent-orange"></i></div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-2">Professional Diploma Package</h3>
+                        <p class="text-text-secondary text-sm">The complete 70-credit path to becoming a certified, job-ready teacher.</p>
+                    </div>
+                    <ul class="space-y-2.5 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Alokito Future Teachers <span class="text-text-muted">(16.5 cr)</span> + Demo Class</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Subject Expert Training <span class="text-text-muted">(14 cr per subject)</span> + Demo Class</span></li>
+                        <li class="flex items-start gap-3 text-sm pl-9 text-text-muted text-xs">English · Science · Inclusive Education · Mathematics</li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Teachers Plan Modules <span class="text-text-muted">(5.25 cr each)</span></span></li>
+                        <li class="flex items-start gap-3 text-sm pl-9 text-text-muted text-xs">Leadership · AI · ADHD · Digital Tools · Communication</li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Shadow Teaching / Internship — 1 Month <span class="text-text-muted">(15 cr)</span></span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Performance Reports & Teaching Portfolio</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Job Placement Support</span></li>
+                        <li class="flex items-start gap-3 text-sm"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent-orange mt-0.5 flex-shrink-0"></i><span>Diploma Assessment</span></li>
+                        <li class="flex items-start gap-3 text-sm font-semibold"><i data-lucide="award" class="w-5 h-5 text-accent-gold mt-0.5 flex-shrink-0"></i><span>Diploma in Professional Teaching Practice</span></li>
+                    </ul>
+                    <div class="border-t border-accent-orange/20 pt-6">
+                        <div class="flex items-end gap-3 mb-1"><span class="text-primary font-extrabold text-3xl">৳35,000</span><span class="text-text-muted text-sm line-through mb-1">৳47,000</span></div>
+                        <p class="text-accent-orange text-sm font-semibold mb-5">Save ৳12,000 with the complete package</p>
+                        <button onclick="openModal()" class="block text-center w-full bg-gradient-to-r from-accent-orange to-accent-gold hover:from-accent-orange/90 hover:to-accent-gold/90 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-accent-orange/25 hover:shadow-xl hover:shadow-accent-orange/30 text-base">Apply for Diploma</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Individual Programs -->
+    <section id="programs" class="py-24 md:py-32 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Our Programs</p>
+                <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Individual Programs</h2>
+                <p class="fade-up delay-2 text-text-secondary text-lg max-w-xl mx-auto">Choose any program or module. Each earns credits you can stack toward the 70-credit diploma.</p>
+            </div>
+
+            <!-- Future Teachers -->
+            <div class="fade-up delay-1 mb-8">
+                <div class="card-hover bg-white rounded-3xl p-8 md:p-10 border border-warm-border">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-14 h-14 rounded-2xl bg-accent-orange/10 flex items-center justify-center flex-shrink-0"><i data-lucide="compass" class="w-7 h-7 text-accent-orange"></i></div>
+                                <div><h3 class="text-2xl font-bold tracking-tight">Alokito Future Teachers</h3><p class="text-text-secondary text-sm">Foundational Training Program</p></div>
+                            </div>
+                            <p class="text-text-secondary text-sm leading-relaxed mb-4 max-w-lg">The essential foundation for any aspiring teacher. Build pedagogy, psychology, and classroom skills.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="demo-badge"><i data-lucide="video" class="w-3 h-3"></i>Demo Class Facility</span>
+                                <span class="demo-badge"><i data-lucide="file-bar-chart" class="w-3 h-3"></i>Performance Report</span>
+                                <span class="demo-badge"><i data-lucide="briefcase" class="w-3 h-3"></i>Placement Support</span>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Pedagogy</div>
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Child Psychology</div>
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Lesson Planning</div>
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Assessment</div>
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Communication</div>
+                                <div class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4 text-accent-orange flex-shrink-0"></i>Classroom Management</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-2 md:text-right flex-shrink-0">
+                            <span class="text-xs font-semibold text-text-muted bg-primary-50 px-3 py-1 rounded-full">43 Hours</span>
+                            <span class="text-xs font-bold text-accent-orange bg-accent-orange/10 px-3 py-1 rounded-full">16.5 Credits</span>
+                            <div><p class="text-text-muted text-xs">Program Fee</p><p class="text-2xl font-extrabold text-primary">৳12,000</p></div>
+                            <button onclick="openModal()" class="text-sm font-semibold text-accent-orange hover:text-primary flex items-center gap-1 transition-colors">Enroll <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject Expert Training -->
+            <div class="fade-up delay-2 mb-8">
+                <div class="mb-5 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-accent-gold/10 flex items-center justify-center"><i data-lucide="atom" class="w-5 h-5 text-accent-gold"></i></div>
+                    <div><h3 class="text-xl font-bold tracking-tight">Subject Expert Training</h3><p class="text-text-secondary text-xs">Edexcel & Cambridge Curricula · Each subject: 14 Credits · Includes Demo Class, Performance Report & Placement Support</p></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="subject-card bg-white rounded-2xl p-6 border border-warm-border cursor-pointer" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-gold/10 flex items-center justify-center mb-3"><i data-lucide="languages" class="w-6 h-6 text-accent-gold"></i></div>
+                        <h4 class="font-bold text-base mb-1">English</h4>
+                        <p class="text-text-secondary text-xs mb-3 leading-relaxed">Edexcel & Cambridge curriculum-aligned English teaching strategies.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="file-bar-chart" class="w-2.5 h-2.5"></i>Report</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div>
+                        <div class="flex items-end justify-between"><div><p class="text-text-muted text-xs">Fee</p><p class="text-lg font-extrabold text-primary">৳10,000</p></div><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div>
+                    </div>
+                    <div class="subject-card bg-white rounded-2xl p-6 border border-warm-border cursor-pointer" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-gold/10 flex items-center justify-center mb-3"><i data-lucide="flask-conical" class="w-6 h-6 text-accent-gold"></i></div>
+                        <h4 class="font-bold text-base mb-1">Science</h4>
+                        <p class="text-text-secondary text-xs mb-3 leading-relaxed">Edexcel & Cambridge curriculum-aligned Science content and pedagogy.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="file-bar-chart" class="w-2.5 h-2.5"></i>Report</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div>
+                        <div class="flex items-end justify-between"><div><p class="text-text-muted text-xs">Fee</p><p class="text-lg font-extrabold text-primary">৳10,000</p></div><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div>
+                    </div>
+                    <div class="subject-card bg-white rounded-2xl p-6 border border-warm-border cursor-pointer" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-gold/10 flex items-center justify-center mb-3"><i data-lucide="heart" class="w-6 h-6 text-accent-gold"></i></div>
+                        <h4 class="font-bold text-base mb-1">Inclusive Education</h4>
+                        <p class="text-text-secondary text-xs mb-3 leading-relaxed">Edexcel & Cambridge aligned strategies for diverse classrooms.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="file-bar-chart" class="w-2.5 h-2.5"></i>Report</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div>
+                        <div class="flex items-end justify-between"><div><p class="text-text-muted text-xs">Fee</p><p class="text-lg font-extrabold text-primary">৳10,000</p></div><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div>
+                    </div>
+                    <div class="subject-card bg-white rounded-2xl p-6 border border-warm-border cursor-pointer" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-gold/10 flex items-center justify-center mb-3"><i data-lucide="calculator" class="w-6 h-6 text-accent-gold"></i></div>
+                        <h4 class="font-bold text-base mb-1">Mathematics</h4>
+                        <p class="text-text-secondary text-xs mb-3 leading-relaxed">Edexcel & Cambridge curriculum-aligned Mathematics methods.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="file-bar-chart" class="w-2.5 h-2.5"></i>Report</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div>
+                        <div class="flex items-end justify-between"><div><p class="text-text-muted text-xs">Fee</p><p class="text-lg font-extrabold text-primary">৳10,000</p></div><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teachers Plan -->
+            <div class="fade-up delay-3">
+                <div class="mb-5 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-accent-red/10 flex items-center justify-center"><i data-lucide="sparkles" class="w-5 h-5 text-accent-red"></i></div>
+                    <div><h3 class="text-xl font-bold tracking-tight">Teachers Plan</h3><p class="text-text-secondary text-xs">Professional Training — Each module: 5.25 Credits · ৳5,000</p></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="module-card bg-white rounded-2xl p-5 border border-warm-border cursor-pointer text-center" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-3"><i data-lucide="crown" class="w-6 h-6 text-accent-red"></i></div>
+                        <h4 class="font-bold text-sm mb-1">Leadership</h4>
+                        <p class="text-text-secondary text-xs mb-4 leading-relaxed">Lead teams and drive school improvement.</p>
+                        <div class="flex items-end justify-center gap-2"><span class="text-base font-extrabold text-primary">৳5,000</span><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full">5.25 cr</span></div>
+                    </div>
+                    <div class="module-card bg-white rounded-2xl p-5 border border-warm-border cursor-pointer text-center" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-3"><i data-lucide="brain" class="w-6 h-6 text-accent-red"></i></div>
+                        <h4 class="font-bold text-sm mb-1">AI in Education</h4>
+                        <p class="text-text-secondary text-xs mb-4 leading-relaxed">Leverage AI tools for teaching and learning.</p>
+                        <div class="flex items-end justify-center gap-2"><span class="text-base font-extrabold text-primary">৳5,000</span><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full">5.25 cr</span></div>
+                    </div>
+                    <div class="module-card bg-white rounded-2xl p-5 border border-warm-border cursor-pointer text-center" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-3"><i data-lucide="hand-heart" class="w-6 h-6 text-accent-red"></i></div>
+                        <h4 class="font-bold text-sm mb-1">ADHD & Special Needs</h4>
+                        <p class="text-text-secondary text-xs mb-4 leading-relaxed">Support neurodiverse learners effectively.</p>
+                        <div class="flex items-end justify-center gap-2"><span class="text-base font-extrabold text-primary">৳5,000</span><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full">5.25 cr</span></div>
+                    </div>
+                    <div class="module-card bg-white rounded-2xl p-5 border border-warm-border cursor-pointer text-center" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-3"><i data-lucide="monitor-smartphone" class="w-6 h-6 text-accent-red"></i></div>
+                        <h4 class="font-bold text-sm mb-1">Digital Teaching Tools</h4>
+                        <p class="text-text-secondary text-xs mb-4 leading-relaxed">Master digital platforms for modern classrooms.</p>
+                        <div class="flex items-end justify-center gap-2"><span class="text-base font-extrabold text-primary">৳5,000</span><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full">5.25 cr</span></div>
+                    </div>
+                    <div class="module-card bg-white rounded-2xl p-5 border border-warm-border cursor-pointer text-center" onclick="openModal()">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-3"><i data-lucide="message-circle" class="w-6 h-6 text-accent-red"></i></div>
+                        <h4 class="font-bold text-sm mb-1">Professional Communication</h4>
+                        <p class="text-text-secondary text-xs mb-4 leading-relaxed">Strong communication with students & parents.</p>
+                        <div class="flex items-end justify-center gap-2"><span class="text-base font-extrabold text-primary">৳5,000</span><span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full">5.25 cr</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customize -->
+    <section id="customize" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Interactive Builder</p>
+                <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Customize Your Learning</h2>
+                <p class="fade-up delay-2 text-text-secondary text-lg max-w-xl mx-auto">Select programs and modules individually. Track your credits toward the diploma in real-time.</p>
+            </div>
+            <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                <div class="lg:col-span-3 space-y-1">
+                    <p class="config-group-label text-accent-orange fade-up">Foundational Training</p>
+                    <div class="fade-up delay-1 bg-warm rounded-2xl p-5 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-3" onclick="toggleCheck('ft')">
+                        <input type="checkbox" id="chk-ft" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Alokito Future Teachers</span><span class="text-xs text-text-muted bg-white px-2 py-0.5 rounded-full">43 hrs</span><span class="text-xs font-bold text-accent-orange bg-accent-orange/10 px-2 py-0.5 rounded-full">16.5 cr</span></div><div class="flex gap-1.5 mt-1"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo Class</span><span class="demo-badge text-[9px]"><i data-lucide="file-bar-chart" class="w-2.5 h-2.5"></i>Report</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div></div>
+                        <span class="font-bold text-sm text-primary">৳12,000</span>
+                    </div>
+                    <p class="config-group-label text-accent-gold fade-up">Subject Expert Training <span class="font-normal text-text-muted">(14 credits each)</span></p>
+                    <div class="fade-up delay-2 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('eng')">
+                        <input type="checkbox" id="chk-eng" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">English</span><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div><div class="flex gap-1.5 mt-1"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div></div>
+                        <span class="font-bold text-sm text-primary">৳10,000</span>
+                    </div>
+                    <div class="fade-up delay-2 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('sci')">
+                        <input type="checkbox" id="chk-sci" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Science</span><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div><div class="flex gap-1.5 mt-1"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div></div>
+                        <span class="font-bold text-sm text-primary">৳10,000</span>
+                    </div>
+                    <div class="fade-up delay-3 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('incl')">
+                        <input type="checkbox" id="chk-incl" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Inclusive Education</span><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div><div class="flex gap-1.5 mt-1"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div></div>
+                        <span class="font-bold text-sm text-primary">৳10,000</span>
+                    </div>
+                    <div class="fade-up delay-3 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-3" onclick="toggleCheck('math')">
+                        <input type="checkbox" id="chk-math" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Mathematics</span><span class="text-xs font-bold text-accent-gold bg-accent-gold/10 px-2 py-0.5 rounded-full">14 cr</span></div><div class="flex gap-1.5 mt-1"><span class="demo-badge text-[9px]"><i data-lucide="video" class="w-2.5 h-2.5"></i>Demo</span><span class="demo-badge text-[9px]"><i data-lucide="briefcase" class="w-2.5 h-2.5"></i>Placement</span></div></div>
+                        <span class="font-bold text-sm text-primary">৳10,000</span>
+                    </div>
+                    <p class="config-group-label text-accent-red fade-up">Teachers Plan Modules <span class="font-normal text-text-muted">(5.25 credits each)</span></p>
+                    <div class="fade-up delay-4 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('lead')">
+                        <input type="checkbox" id="chk-lead" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><span class="font-semibold text-sm">Leadership</span></div>
+                        <span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full mr-2">5.25 cr</span><span class="font-bold text-sm text-primary">৳5,000</span>
+                    </div>
+                    <div class="fade-up delay-4 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('ai')">
+                        <input type="checkbox" id="chk-ai" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><span class="font-semibold text-sm">AI in Education</span></div>
+                        <span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full mr-2">5.25 cr</span><span class="font-bold text-sm text-primary">৳5,000</span>
+                    </div>
+                    <div class="fade-up delay-4 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('adhd')">
+                        <input type="checkbox" id="chk-adhd" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><span class="font-semibold text-sm">ADHD & Special Needs</span></div>
+                        <span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full mr-2">5.25 cr</span><span class="font-bold text-sm text-primary">৳5,000</span>
+                    </div>
+                    <div class="fade-up delay-5 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('digital')">
+                        <input type="checkbox" id="chk-digital" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><span class="font-semibold text-sm">Digital Teaching Tools</span></div>
+                        <span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full mr-2">5.25 cr</span><span class="font-bold text-sm text-primary">৳5,000</span>
+                    </div>
+                    <div class="fade-up delay-5 bg-warm rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-3" onclick="toggleCheck('comm')">
+                        <input type="checkbox" id="chk-comm" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><span class="font-semibold text-sm">Professional Communication</span></div>
+                        <span class="text-xs font-bold text-accent-red bg-accent-red/10 px-2 py-0.5 rounded-full mr-2">5.25 cr</span><span class="font-bold text-sm text-primary">৳5,000</span>
+                    </div>
+                    <p class="config-group-label text-primary-light fade-up">Diploma Pathway</p>
+                    <div class="fade-up delay-5 bg-warm rounded-2xl p-5 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100 mb-2" onclick="toggleCheck('shadow')">
+                        <input type="checkbox" id="chk-shadow" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Shadow Teaching / Internship</span><span class="text-xs text-text-muted bg-white px-2 py-0.5 rounded-full">1 Month</span><span class="text-xs font-bold text-primary-light bg-primary-50 px-2 py-0.5 rounded-full">15 cr</span></div></div>
+                        <span class="font-bold text-sm text-accent-orange">Included*</span>
+                    </div>
+                    <div class="fade-up delay-5 bg-warm rounded-2xl p-5 flex items-center gap-4 cursor-pointer hover:bg-primary-50 transition-colors border border-transparent hover:border-primary-100" onclick="toggleCheck('dip')">
+                        <input type="checkbox" id="chk-dip" class="check-custom" onchange="updateConfigurator()">
+                        <div class="flex-1"><div class="flex items-center gap-3 flex-wrap"><span class="font-semibold text-sm">Diploma Certification</span><span class="text-xs text-accent-orange bg-accent-orange/10 px-2 py-0.5 rounded-full font-semibold">Required</span></div></div>
+                        <span class="font-bold text-sm text-accent-orange">Included*</span>
+                    </div>
+                </div>
+                <!-- Summary -->
+                <div class="lg:col-span-2">
+                    <div class="sticky top-24 bg-white border border-warm-border rounded-3xl p-7 shadow-sm">
+                        <h4 class="font-bold text-lg mb-5">Your Selection</h4>
+                        <div id="summary-items" class="space-y-2 mb-5 max-h-[260px] overflow-y-auto pr-1" style="scrollbar-width:thin"><p class="text-text-muted text-sm py-4 text-center">Select programs to see your summary</p></div>
+                        <div id="credit-progress" class="mb-6 hidden">
+                            <div class="flex items-center justify-between mb-2"><span class="text-sm font-semibold">Credit Progress</span><span id="credit-count" class="text-sm font-bold text-accent-orange">0 / 70</span></div>
+                            <div class="w-full h-3 bg-warm rounded-full overflow-hidden"><div id="credit-bar-fill" class="credit-fill h-full bg-gradient-to-r from-accent-orange to-accent-gold rounded-full" style="width:0%"></div></div>
+                        </div>
+                        <div id="demo-summary" class="hidden mb-4 p-3 bg-accent-orange/5 border border-accent-orange/10 rounded-xl">
+                            <p class="text-xs font-semibold text-accent-orange mb-1.5">Includes with Selected Programs:</p>
+                            <div class="flex flex-wrap gap-1.5"><span class="demo-badge"><i data-lucide="video" class="w-3 h-3"></i>Demo Class</span><span class="demo-badge"><i data-lucide="file-bar-chart" class="w-3 h-3"></i>Performance Report</span><span class="demo-badge"><i data-lucide="briefcase" class="w-3 h-3"></i>Placement Support</span></div>
+                        </div>
+                        <div class="border-t border-warm-border pt-5 space-y-3">
+                            <div class="flex justify-between text-sm"><span class="text-text-muted">Total Duration</span><span id="sum-hours" class="font-semibold">0 hours</span></div>
+                            <div class="flex justify-between text-sm"><span class="text-text-muted">Shadow Teaching</span><span id="sum-intern" class="font-semibold">Not included</span></div>
+                            <div class="flex justify-between items-end pt-3 border-t border-warm-border"><span class="font-semibold">Total Cost</span><span id="sum-cost" class="text-2xl font-extrabold text-primary">৳0</span></div>
+                        </div>
+                        <div id="congrats-card" class="hidden mt-5"></div>
+                        <button id="config-apply-btn" onclick="openModal()" class="hidden w-full mt-5 bg-gradient-to-r from-accent-orange to-accent-gold text-white font-bold py-3.5 rounded-2xl transition-all shadow-lg shadow-accent-orange/20 hover:shadow-xl">Apply for Diploma — ৳35,000</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Shadow Teaching -->
+    <section id="internship" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Real Experience</p>
+                    <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-2 leading-tight">Shadow Teaching &<br>Internship</h2>
+                    <p class="fade-up delay-1 text-accent-orange font-semibold text-sm mb-6">1 Month · 15 Credits · Partner Schools</p>
+                    <p class="fade-up delay-2 text-text-secondary text-lg leading-relaxed mb-8">Step into a real classroom with the support of experienced mentors. Our shadow teaching and internship program gives you practical, hands-on experience.</p>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="fade-up delay-2 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-accent-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="school" class="w-5 h-5 text-accent-orange"></i></div><div><p class="font-semibold text-sm">Partner Schools</p><p class="text-text-secondary text-xs mt-0.5">Trusted school network</p></div></div>
+                        <div class="fade-up delay-3 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="users" class="w-5 h-5 text-accent-gold"></i></div><div><p class="font-semibold text-sm">1-on-1 Mentorship</p><p class="text-text-secondary text-xs mt-0.5">Guided by senior teachers</p></div></div>
+                        <div class="fade-up delay-3 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-accent-red/10 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="folder-open" class="w-5 h-5 text-accent-red"></i></div><div><p class="font-semibold text-sm">Teaching Portfolio</p><p class="text-text-secondary text-xs mt-0.5">Build your professional record</p></div></div>
+                        <div class="fade-up delay-4 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="chalkboard" class="w-5 h-5 text-primary"></i></div><div><p class="font-semibold text-sm">Real Classroom</p><p class="text-text-secondary text-xs mt-0.5">Actual teaching practice</p></div></div>
+                        <div class="fade-up delay-4 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-accent-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="eye" class="w-5 h-5 text-accent-orange"></i></div><div><p class="font-semibold text-sm">Shadow Teaching</p><p class="text-text-secondary text-xs mt-0.5">Observe expert teachers</p></div></div>
+                        <div class="fade-up delay-5 flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-accent-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="badge-check" class="w-5 h-5 text-accent-gold"></i></div><div><p class="font-semibold text-sm">Internship Certificate</p><p class="text-text-secondary text-xs mt-0.5">Verified experience proof</p></div></div>
+                    </div>
+                </div>
+                <div class="fade-up delay-2 relative">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-accent-orange/10 via-accent-gold/10 to-accent-red/10 rounded-4xl blur-2xl"></div>
+                    <img src="https://picsum.photos/seed/school-teachers-staff-room/700/500.jpg" alt="School teachers collaborating" class="relative rounded-3xl shadow-2xl w-full object-cover" style="aspect-ratio:7/5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Career Support -->
+    <section class="py-24 md:py-32 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Beyond the Classroom</p>
+                <h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Job Placement Support</h2>
+                <p class="fade-up delay-2 text-text-secondary text-lg max-w-xl mx-auto">Available after every program with demo class facility — plus comprehensive support for diploma graduates.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="fade-up delay-1 card-hover bg-white rounded-2xl p-6 text-center border border-warm-border"><div class="w-14 h-14 rounded-2xl bg-accent-orange/10 flex items-center justify-center mx-auto mb-4"><i data-lucide="file-text" class="w-7 h-7 text-accent-orange"></i></div><h4 class="font-bold text-sm mb-1">CV Review</h4><p class="text-text-secondary text-xs">Professional resume polishing</p></div>
+                <div class="fade-up delay-2 card-hover bg-white rounded-2xl p-6 text-center border border-warm-border"><div class="w-14 h-14 rounded-2xl bg-accent-gold/10 flex items-center justify-center mx-auto mb-4"><i data-lucide="linkedin" class="w-7 h-7 text-accent-gold"></i></div><h4 class="font-bold text-sm mb-1">LinkedIn Profile</h4><p class="text-text-secondary text-xs">Build a professional presence</p></div>
+                <div class="fade-up delay-3 card-hover bg-white rounded-2xl p-6 text-center border border-warm-border"><div class="w-14 h-14 rounded-2xl bg-accent-red/10 flex items-center justify-center mx-auto mb-4"><i data-lucide="mic" class="w-7 h-7 text-accent-red"></i></div><h4 class="font-bold text-sm mb-1">Interview Preparation</h4><p class="text-text-secondary text-xs">Mock interviews & feedback</p></div>
+                <div class="fade-up delay-4 card-hover bg-white rounded-2xl p-6 text-center border border-warm-border"><div class="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center mx-auto mb-4"><i data-lucide="network" class="w-7 h-7 text-primary"></i></div><h4 class="font-bold text-sm mb-1">Direct Placement Network</h4><p class="text-text-secondary text-xs">Connections to hiring schools</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Outcomes -->
+    <section class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16"><p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Outcomes</p><h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">What You'll Gain</h2></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+                <div class="fade-up delay-1 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-orange/10 to-accent-orange/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="lightbulb" class="w-8 h-8 text-accent-orange"></i></div><h4 class="font-bold text-sm">Modern Pedagogy</h4></div>
+                <div class="fade-up delay-2 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-gold/10 to-accent-gold/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="crown" class="w-8 h-8 text-accent-gold"></i></div><h4 class="font-bold text-sm">Classroom Leadership</h4></div>
+                <div class="fade-up delay-3 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-red/10 to-accent-red/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="monitor-smartphone" class="w-8 h-8 text-accent-red"></i></div><h4 class="font-bold text-sm">Digital Teaching</h4></div>
+                <div class="fade-up delay-4 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="target" class="w-8 h-8 text-primary"></i></div><h4 class="font-bold text-sm">Subject Expertise</h4></div>
+                <div class="fade-up delay-2 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-gold/10 to-accent-gold/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="heart" class="w-8 h-8 text-accent-gold"></i></div><h4 class="font-bold text-sm">Inclusive Education</h4></div>
+                <div class="fade-up delay-3 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-orange/10 to-accent-orange/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="video" class="w-8 h-8 text-accent-orange"></i></div><h4 class="font-bold text-sm">Demo Class Mastery</h4></div>
+                <div class="fade-up delay-4 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-accent-red/10 to-accent-red/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="flame" class="w-8 h-8 text-accent-red"></i></div><h4 class="font-bold text-sm">Confidence</h4></div>
+                <div class="fade-up delay-5 text-center p-6"><div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4"><i data-lucide="rocket" class="w-8 h-8 text-primary"></i></div><h4 class="font-bold text-sm">Employability</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Testimonials -->
+    <section class="py-24 md:py-32 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16"><p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Success Stories</p><h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Teachers Love Alokito</h2></div>
+            <div class="relative overflow-hidden">
+                <div id="carousel-track" class="carousel-track flex gap-6">
+                    <div class="flex-shrink-0 w-[340px] md:w-[420px] bg-white rounded-3xl p-7 border border-warm-border"><div class="flex gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i></div><p class="text-sm leading-relaxed text-text-secondary mb-6">"The demo class after Future Teachers was incredible — I got a detailed performance report and the placement support helped me land my first job within weeks!"</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/teacher-fatema/48/48.jpg" class="w-11 h-11 rounded-full object-cover" alt="Fatema"><div><p class="font-semibold text-sm">Fatema Akter</p><p class="text-text-muted text-xs">Science Teacher, Sunflower School</p></div></div></div>
+                    <div class="flex-shrink-0 w-[340px] md:w-[420px] bg-white rounded-3xl p-7 border border-warm-border"><div class="flex gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i></div><p class="text-sm leading-relaxed text-text-secondary mb-6">"Each Subject Expert program gave me 14 credits, a demo class recording, a performance report, and placement support. The English program for Cambridge curriculum was exactly what I needed."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/teacher-rahim/48/48.jpg" class="w-11 h-11 rounded-full object-cover" alt="Rahim"><div><p class="font-semibold text-sm">Rahim Uddin</p><p class="text-text-muted text-xs">English Teacher, Greenfield Academy</p></div></div></div>
+                    <div class="flex-shrink-0 w-[340px] md:w-[420px] bg-white rounded-3xl p-7 border border-warm-border"><div class="flex gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i></div><p class="text-sm leading-relaxed text-text-secondary mb-6">"The AI in Education module from Teachers Plan — 5.25 credits that transformed my career. Each Teachers Plan module is substantial and counted separately. I'm now the tech lead at my school."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/teacher-nusrat/48/48.jpg" class="w-11 h-11 rounded-full object-cover" alt="Nusrat"><div><p class="font-semibold text-sm">Nusrat Jahan</p><p class="text-text-muted text-xs">Math Teacher, Bright Future School</p></div></div></div>
+                    <div class="flex-shrink-0 w-[340px] md:w-[420px] bg-white rounded-3xl p-7 border border-warm-border"><div class="flex gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i></div><p class="text-sm leading-relaxed text-text-secondary mb-6">"The demo class + performance report combo after Future Teachers gave me real proof of my skills. The mock interview prep then sealed the deal — got hired within 2 months."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/teacher-tanvir/48/48.jpg" class="w-11 h-11 rounded-full object-cover" alt="Tanvir"><div><p class="font-semibold text-sm">Tanvir Ahmed</p><p class="text-text-muted text-xs">Primary Teacher, City School</p></div></div></div>
+                    <div class="flex-shrink-0 w-[340px] md:w-[420px] bg-white rounded-3xl p-7 border border-warm-border"><div class="flex gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i><i data-lucide="star" class="w-4 h-4 fill-accent-gold text-accent-gold"></i></div><p class="text-sm leading-relaxed text-text-secondary mb-6">"Inclusive Education Subject Expert — 14 credits, a demo class, performance report, and placement support all in one program. The Edexcel & Cambridge alignment was perfect."</p><div class="flex items-center gap-3"><img src="https://picsum.photos/seed/teacher-sadia/48/48.jpg" class="w-11 h-11 rounded-full object-cover" alt="Sadia"><div><p class="font-semibold text-sm">Sadia Rahman</p><p class="text-text-muted text-xs">Inclusive Ed Lead, Oxford International</p></div></div></div>
+                </div>
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button onclick="moveCarousel(-1)" class="w-11 h-11 rounded-full border border-warm-border hover:border-primary hover:bg-primary-50 flex items-center justify-center transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <div id="carousel-dots" class="flex gap-2"></div>
+                    <button onclick="moveCarousel(1)" class="w-11 h-11 rounded-full border border-warm-border hover:border-primary hover:bg-primary-50 flex items-center justify-center transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16"><p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">Transparent Pricing</p><h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Compare Plans</h2></div>
+            <div class="fade-up max-w-4xl mx-auto overflow-x-auto">
+                <table class="w-full min-w-[620px]">
+                    <thead><tr><th class="text-left py-5 px-5 text-sm font-semibold text-text-muted">Feature</th><th class="text-center py-5 px-5 text-sm font-semibold text-text-muted w-[200px]">Individual</th><th class="text-center py-5 px-5 w-[200px]"><div class="inline-flex items-center gap-2 bg-accent-orange/10 text-accent-orange text-sm font-bold px-4 py-1.5 rounded-full"><i data-lucide="trophy" class="w-4 h-4"></i>Diploma Package</div></th></tr></thead>
+                    <tbody class="text-sm">
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Alokito Future Teachers <span class="text-text-muted">(16.5 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary pl-8 text-xs">+ Demo Class · Performance Report · Placement Support</td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Subject Expert — English <span class="text-text-muted">(14 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Subject Expert — Science <span class="text-text-muted">(14 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Subject Expert — Inclusive Ed <span class="text-text-muted">(14 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Subject Expert — Mathematics <span class="text-text-muted">(14 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary pl-8 text-xs">+ Each includes Demo Class · Performance Report · Placement Support</td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary font-medium">Teachers Plan Modules <span class="text-text-muted font-normal">(5.25 cr each)</span></td><td class="py-4 px-5 text-center text-xs text-text-muted">Choose any · ৳5,000 each</td><td class="py-4 px-5 text-center bg-accent-orange/[0.03] text-xs text-text-muted">All 5 included</td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary pl-8 text-xs">Leadership · AI · ADHD · Digital Tools · Communication</td><td class="py-4 px-5 text-center"></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Shadow Teaching / Internship <span class="text-text-muted">(15 cr)</span></td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Partner School Experience</td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Professional Teaching Portfolio</td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">CV Review, LinkedIn & Interview Prep</td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Direct Placement Network</td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 font-semibold">Diploma Certification</td><td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-5 h-5 text-text-muted/40 mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t border-warm-border"><td class="py-4 px-5 text-text-secondary">Individual Certificates</td><td class="py-4 px-5 text-center"><i data-lucide="check" class="w-5 h-5 text-primary mx-auto"></i></td><td class="py-4 px-5 text-center bg-accent-orange/[0.03]"><i data-lucide="check" class="w-5 h-5 text-accent-orange mx-auto"></i></td></tr>
+                        <tr class="border-t-2 border-warm-border"><td class="py-5 px-5 font-bold text-base">Price</td><td class="py-5 px-5 text-center font-bold text-base">From ৳5,000</td><td class="py-5 px-5 text-center bg-accent-orange/[0.03]"><div class="font-extrabold text-xl text-primary">৳35,000</div><div class="text-xs text-accent-orange font-semibold mt-0.5">Save ৳12,000</div></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fade-up delay-1 flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+                <button onclick="openModal()" class="bg-gradient-to-r from-accent-orange to-accent-gold hover:from-accent-orange/90 hover:to-accent-gold/90 text-white font-bold px-8 py-4 rounded-2xl transition-all shadow-lg shadow-accent-orange/20">Apply for Diploma — ৳35,000</button>
+                <a href="#programs" class="border-2 border-warm-border hover:border-primary text-primary font-semibold px-8 py-4 rounded-2xl transition-all hover:bg-primary-50">Browse Individual Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 md:py-32">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16"><p class="fade-up text-xs font-semibold tracking-widest uppercase text-accent-orange mb-4">FAQ</p><h2 class="fade-up delay-1 text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Frequently Asked Questions</h2></div>
+            <div class="fade-up space-y-3">
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">What is the 70-credit Diploma in Professional Teaching Practice?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">It's a comprehensive certification earned through Alokito Future Teachers (16.5 cr), Subject Expert Training (14 cr per subject), Teachers Plan modules (5.25 cr each), Shadow Teaching/Internship (15 cr), and diploma assessment & portfolio work.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">How are Subject Expert credits counted?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">Each subject (English, Science, Inclusive Education, Mathematics) is a separate 14-credit program. Take English = 14 credits. Take English and Science = 28 credits. Each includes a demo class, performance report, and placement support.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">How are Teachers Plan modules counted?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">Each Teachers Plan module — Leadership, AI in Education, ADHD & Special Needs, Digital Teaching Tools, Professional Communication — is a separate 5.25-credit program at ৳5,000 each. You can take them individually and they all count toward your total.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">What is the demo class facility?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">After completing Alokito Future Teachers and each Subject Expert program, participants conduct a demo class. You receive a detailed performance report evaluating your teaching, a recording of your demo class, and placement support to help you connect with schools.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">Can I start with individual programs and upgrade later?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">Absolutely! Credits from individual programs count toward the diploma. When you upgrade, the cost of completed programs is deducted from the diploma package price.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">How does the shadow teaching work?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">After required coursework, you'll be placed at a partner school for 1 month. You'll observe expert teachers (shadow teaching), gradually teach classes (internship), build your portfolio under mentorship, and earn 15 credits plus an internship certificate.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">Are programs online or in-person?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">Both online and hybrid. Most coursework is online; demo classes, shadow teaching, and some workshops are in-person.</p></div></div>
+                <div class="faq-item border border-warm-border rounded-2xl overflow-hidden"><button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-primary-50/50 transition-colors"><span class="font-semibold text-sm pr-4">What payment options are available?</span><i data-lucide="chevron-down" class="w-5 h-5 text-text-muted accordion-icon flex-shrink-0"></i></button><div class="accordion-content"><p class="px-6 pb-5 text-text-secondary text-sm leading-relaxed">bKash, Nagad, bank transfer, and credit/debit cards. The Diploma Package offers up to 3 installments.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 md:py-32 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10"><div class="absolute top-10 left-10 w-72 h-72 bg-accent-orange rounded-full blur-[120px]"></div><div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-gold rounded-full blur-[120px]"></div></div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+            <h2 class="fade-up text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">Ready to Transform<br>Your Teaching Career?</h2>
+            <p class="fade-up delay-1 text-white/70 text-lg mb-10 max-w-xl mx-auto">Join hundreds of teachers who have earned their diploma through demo classes, performance reports, and real classroom experience.</p>
+            <div class="fade-up delay-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="openModal()" class="w-full sm:w-auto bg-white text-primary font-bold px-8 py-4 rounded-2xl hover:bg-white/90 transition-all shadow-xl text-base flex items-center justify-center gap-2">Apply Now <i data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                <button onclick="showToast('Our advisor will contact you shortly!')" class="w-full sm:w-auto border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-white/10 transition-all text-base flex items-center justify-center gap-2"><i data-lucide="phone" class="w-5 h-5"></i> Talk to an Advisor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i></div><span class="font-bold text-lg text-white">Alokito Teachers</span></div>
+                    <p class="text-white/50 text-sm leading-relaxed max-w-sm mb-6">Empowering teachers to achieve professional success and deliver equitable, quality education through improved skills, motivation, and student-centered teaching.</p>
+                    <div class="flex gap-3"><a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"><i data-lucide="facebook" class="w-5 h-5 text-white/60"></i></a><a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-5 h-5 text-white/60"></i></a><a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"><i data-lucide="linkedin" class="w-5 h-5 text-white/60"></i></a><a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"><i data-lucide="youtube" class="w-5 h-5 text-white/60"></i></a></div>
+                </div>
+                <div><h4 class="font-semibold text-white text-sm mb-4">Programs</h4><ul class="space-y-2.5"><li><a href="#programs" class="text-white/50 text-sm hover:text-white transition-colors">Alokito Future Teachers</a></li><li><a href="#programs" class="text-white/50 text-sm hover:text-white transition-colors">Subject Expert Training</a></li><li><a href="#programs" class="text-white/50 text-sm hover:text-white transition-colors">Teachers Plan Modules</a></li><li><a href="#choose" class="text-white/50 text-sm hover:text-white transition-colors">Diploma Package</a></li><li><a href="#customize" class="text-white/50 text-sm hover:text-white transition-colors">Customize Learning</a></li></ul></div>
+                <div><h4 class="font-semibold text-white text-sm mb-4">Company</h4><ul class="space-y-2.5"><li><a href="#" class="text-white/50 text-sm hover:text-white transition-colors">About Us</a></li><li><a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Partner Schools</a></li><li><a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Careers</a></li><li><a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Blog</a></li><li><a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Contact</a></li></ul></div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"><p class="text-white/30 text-xs">© 2025 Alokito Teachers. All rights reserved.</p><div class="flex gap-6"><a href="#" class="text-white/30 text-xs hover:text-white/60 transition-colors">Privacy Policy</a><a href="#" class="text-white/30 text-xs hover:text-white/60 transition-colors">Terms of Service</a></div></div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <div id="float-btn" class="float-btn fixed bottom-6 right-6 z-50"><button onclick="openModal()" class="bg-gradient-to-r from-accent-orange to-accent-gold text-white font-bold px-6 py-3.5 rounded-2xl shadow-xl shadow-accent-orange/30 hover:shadow-2xl hover:shadow-accent-orange/40 transition-all flex items-center gap-2 text-sm"><i data-lucide="send" class="w-4 h-4"></i> Apply Now</button></div>
+
+    <script>
+    lucide.createIcons();
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{const s=window.scrollY;navbar.classList.toggle('nav-blur',s>50);navbar.classList.toggle('bg-white/80',s>50);navbar.classList.toggle('border-b',s>50);navbar.classList.toggle('border-warm-border/50',s>50);document.getElementById('float-btn').classList.toggle('visible',s>600)});
+    function toggleMobileMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
+    function openModal(){const m=document.getElementById('apply-modal');m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';setTimeout(()=>lucide.createIcons(),50)}
+    function closeModal(){const m=document.getElementById('apply-modal');m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow=''}
+    document.getElementById('apply-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
+    function showToast(msg){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+    const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    const tObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.2});
+    const tf=document.getElementById('timeline-fill');if(tf)tObs.observe(tf);
+
+    const P={ft:{name:'Alokito Future Teachers',hrs:43,cost:12000,cr:16.5,demo:true},eng:{name:'Subject Expert — English',hrs:30,cost:10000,cr:14,demo:true},sci:{name:'Subject Expert — Science',hrs:30,cost:10000,cr:14,demo:true},incl:{name:'Subject Expert — Inclusive Ed',hrs:30,cost:10000,cr:14,demo:true},math:{name:'Subject Expert — Mathematics',hrs:30,cost:10000,cr:14,demo:true},lead:{name:'Leadership',hrs:15,cost:5000,cr:5.25,demo:false},ai:{name:'AI in Education',hrs:15,cost:5000,cr:5.25,demo:false},adhd:{name:'ADHD & Special Needs',hrs:15,cost:5000,cr:5.25,demo:false},digital:{name:'Digital Teaching Tools',hrs:15,cost:5000,cr:5.25,demo:false},comm:{name:'Professional Communication',hrs:15,cost:5000,cr:5.25,demo:false},shadow:{name:'Shadow Teaching / Internship',hrs:0,cost:0,cr:15,demo:false},dip:{name:'Diploma Certification',hrs:0,cost:0,cr:0,demo:false}};
+    const TP_IDS=['lead','ai','adhd','digital','comm'],SE_IDS=['eng','sci','incl','math'];
+
+    function toggleCheck(id){const c=document.getElementById('chk-'+id);c.checked=!c.checked;updateConfigurator()}
+
+    function updateConfigurator(){
+        const sel=[];let hrs=0,cost=0,cr=0,hasSE=false,tpCount=0,hasDemo=false;
+        Object.keys(P).forEach(id=>{if(document.getElementById('chk-'+id).checked){const p=P[id];sel.push({name:p.name,cr:p.cr});hrs+=p.hrs;cost+=p.cost;cr+=p.cr;if(SE_IDS.includes(id))hasSE=true;if(TP_IDS.includes(id))tpCount++;if(p.demo)hasDemo=true}});
+        const el=document.getElementById('summary-items');
+        if(!sel.length){el.innerHTML='<p class="text-text-muted text-sm py-4 text-center">Select programs to see your summary</p>'}
+        else{el.innerHTML=sel.map(s=>`<div class="flex items-center justify-between py-1.5 border-b border-warm-border/40"><span class="text-sm text-text-secondary">${s.name}</span><div class="flex items-center gap-2">${s.cr>0?`<span class="text-xs font-medium text-text-muted">${s.cr} cr</span>`:''}<i data-lucide="check-circle-2" class="w-4 h-4 text-accent-orange flex-shrink-0"></i></div></div>`).join('');lucide.createIcons()}
+        const cp=document.getElementById('credit-progress'),cc=document.getElementById('credit-count'),cf=document.getElementById('credit-bar-fill');
+        if(sel.length){cp.classList.remove('hidden');cc.textContent=(cr%1===0?cr:cr.toFixed(2))+' / 70';cf.style.width=Math.min(100,(cr/70)*100)+'%'}else{cp.classList.add('hidden')}
+        document.getElementById('sum-hours').textContent=hrs?hrs+' hours':'0 hours';
+        document.getElementById('sum-cost').textContent='৳'+cost.toLocaleString();
+        const ds=document.getElementById('demo-summary');hasDemo?ds.classList.remove('hidden'):ds.classList.add('hidden');
+        const sh=document.getElementById('chk-shadow').checked;
+        document.getElementById('sum-intern').innerHTML=sh?'<span class="text-accent-orange font-semibold">✓ Included</span>':'<span class="text-text-muted">Not included</span>';
+        const ft=document.getElementById('chk-ft').checked,dp=document.getElementById('chk-dip').checked,allTP=tpCount===5,qualifies=ft&&hasSE&&allTP&&sh&&dp;
+        const cg=document.getElementById('congrats-card'),ab=document.getElementById('config-apply-btn');
+        if(qualifies){cg.className='mt-5 celebration';cg.innerHTML=`<div class="relative bg-gradient-to-br from-accent-orange/10 via-accent-gold/10 to-accent-red/10 border border-accent-orange/20 rounded-2xl p-5 text-center overflow-hidden"><div class="confetti-piece" style="left:10%;top:20%;background:#E2804B;animation-delay:0s"></div><div class="confetti-piece" style="left:30%;top:10%;background:#ECBB4E;animation-delay:.1s"></div><div class="confetti-piece" style="left:50%;top:15%;background:#E45D5D;animation-delay:.2s"></div><div class="confetti-piece" style="left:70%;top:20%;background:#E2804B;animation-delay:.3s"></div><div class="confetti-piece" style="left:85%;top:10%;background:#ECBB4E;animation-delay:.15s"></div><p class="text-2xl mb-1">🎉</p><p class="font-bold text-sm text-primary">Congratulations!</p><p class="text-xs text-text-secondary mt-1">You qualify for the <strong>Diploma in Professional Teaching Practice</strong></p></div>`;ab.classList.remove('hidden');document.getElementById('sum-cost').textContent='৳35,000';cc.textContent='70 / 70';cf.style.width='100%'}
+        else{cg.className='hidden mt-5';cg.innerHTML='';ab.classList.add('hidden')}
+    }
+
+    let ci=0;const trk=document.getElementById('carousel-track'),cds=trk.children,dots=document.getElementById('carousel-dots');
+    const gpv=()=>window.innerWidth>=768?2:1,gmi=()=>Math.max(0,cds.length-gpv());
+    function uc(){trk.style.transform=`translateX(-${ci*(cds[0].offsetWidth+24)}px)`;dots.innerHTML='';for(let i=0;i<=gmi();i++){const d=document.createElement('button');d.className=`w-2 h-2 rounded-full transition-all ${i===ci?'bg-primary w-6':'bg-warm-border'}`;d.onclick=()=>{ci=i;uc()};dots.appendChild(d)}}
+    function moveCarousel(dir){ci=Math.max(0,Math.min(gmi(),ci+dir));uc()}
+    uc();window.addEventListener('resize',()=>{ci=Math.min(ci,gmi());uc()});
+    let ciInt=setInterval(()=>{ci=ci>=gmi()?0:ci+1;uc()},5000);
+    trk.parentElement.addEventListener('mouseenter',()=>clearInterval(ciInt));
+    trk.parentElement.addEventListener('mouseleave',()=>{ciInt=setInterval(()=>{ci=ci>=gmi()?0:ci+1;uc()},5000)});
+
+    function toggleFaq(btn){const it=btn.parentElement,ct=it.querySelector('.accordion-content'),ic=btn.querySelector('.accordion-icon'),open=ct.classList.contains('open');document.querySelectorAll('.accordion-content').forEach(c=>c.classList.remove('open'));document.querySelectorAll('.accordion-icon').forEach(i=>i.classList.remove('open'));if(!open){ct.classList.add('open');ic.classList.add('open')}}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(document.getElementById('mobile-menu').classList.contains('open'))toggleMobileMenu()}});
+    </script>
+</body>
+</html>
